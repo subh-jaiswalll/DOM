@@ -328,10 +328,11 @@
 
 // Arrow function
 
-const add = (a, b) => a + b;
-console.log(add(5, 10)); // Output: 15
+// const add = (a, b) => a + b;
+// console.log(add(5, 10)); // Output: 15
 
 // Object.
+
 
 // using Class.
 
@@ -339,3 +340,83 @@ console.log(add(5, 10)); // Output: 15
 // Object Literals.
 // using Function.
 // Object Constructor.
+
+// let newDate = new Date()
+// let year = newDate.getFullYear();
+// let month = newDate.getMonth();
+
+// console.log(newDate.toString());
+// console.log(newDate.toDateString());
+// console.log(newDate.toTimeString());
+// console.log(newDate.toISOString())
+// console.log(newDate.toLocaleString());
+// console.log(year);
+// console.log(month);
+
+// let date = newDate.getDate();   
+// console.log(date.toString());
+
+// let day = newDate.getDay(); 
+// console.log(day);
+
+// let hour = newDate.getHours();
+// console.log(hour);
+
+// let minute = newDate.getMinutes();
+// console.log(minute);
+
+// let second = newDate.getSeconds();
+// console.log(second);
+
+// let arr = ["Atul", "Rahul", "Rohit", "Suresh", "Ajeet", "Atul", ];
+
+// arr.sort();
+// console.log(arr);
+
+
+// for(let name of arr){
+//     console.log(`Hello, ${name}!`);
+// }
+
+// arr.push("Anil");
+// console.log(arr);
+
+// arr.pop();
+// console.log(arr);
+
+// arr.shift();
+// console.log(arr);
+
+// arr.unshift("Anil");
+// console.log(arr);
+
+// arr.splice(2, 2 );
+// console.log(arr);
+
+// arr.splice(1, 3, "Anil", "Sunil", "Ramesh");
+// console.log(arr);
+
+// arr.slice(1, 4);
+// console.log(arr);
+
+
+// let arr = [1, 2, 3, 4, 5, 2,[6, 7, 8, [9, 10, [11, 12,[13, 14, 15]]]]];
+
+// console.log(arr.indexOf(2)); 
+// console.log(arr.lastIndexOf(2));
+
+// console.log(arr.includes(3)); 
+// console.log(arr.includes(6));
+
+// arr.sort();
+// console.log(arr);
+
+// arr.sort((a, b) => b - a);
+// console.log(arr);
+
+// const flattenedArr = arr.flat(4);
+// console.log(flattenedArr);
+
+// delete arr[5];
+// console.log(arr);
+
