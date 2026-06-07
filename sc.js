@@ -2,6 +2,7 @@
 
 // // There are two types of data types in JavaScript: primitive and non-primitive (reference) data types.
 
+
 // // Primitive data types means: String, Number, Boolean, Undefined, Null, BigInt, and Symbol.
 
 // // String is a sequence of characters enclosed in single quotes, double quotes, or backticks. It is used to represent text.
@@ -626,26 +627,137 @@
 
 // This is your callback function. It's the "phone number" you'll leave behind.
 // It describes what to do once the pizza is ready.
-function pickUpPizza() {
-  console.log("Pizza is ready! Driving to the store to pick it up.");
-}
+// function pickUpPizza() {
+//   console.log("Pizza is ready! Driving to the store to pick it up.");
+// }
 
 
-function orderPizza(callback) {
+// function orderPizza(callback) {
   
   
-  console.log("Placing the pizza order...");
+//   console.log("Placing the pizza order...");
 
-    console.log("Pizza is cooked!");
+//     console.log("Pizza is cooked!");
   
-    callback();
+//     callback();
 
   
-}
+// }
 
-// --- Let's run the program ---
-// We call orderPizza and give it our pickUpPizza function as the callback argument.
-orderPizza(pickUpPizza);
+// // --- Let's run the program ---
+// // We call orderPizza and give it our pickUpPizza function as the callback argument.
+// orderPizza(pickUpPizza);
 
-// This line will run immediately, while the pizza is still "cooking".
-console.log("I'm not waiting at the store. I'm at home, coding.");
+// // This line will run immediately, while the pizza is still "cooking".
+// console.log("I'm not waiting at the store. I'm at home, coding.");
+
+
+// const products = [
+//   { id: 1, name: "Laptop", category: "Electronics", price: 1200, inStock: true },
+//   { id: 2, name: "Book", category: "Books", price: 30, inStock: true },
+//   { id: 3, name: "Coffee Maker", category: "Appliances", price: 150, inStock: false },
+//   { id: 4, name: "Headphones", category: "Electronics", price: 200, inStock: true }
+// ];
+
+// console.log(" --- Our Product --- ")
+
+// products.forEach(element => {
+//     console.log(`-${element.price}`)
+    
+// });
+
+// const productName = products.map((element) =>{
+//     return element.name;
+// })
+// console.log(productName);
+
+
+// const filter = products.filter((element ) =>{
+//     return element.inStock === true && element.category === "Electronics";
+// })
+
+// console.log(filter);
+
+
+// const totalStockValue = products.reduce((total, product) =>{
+
+//     console.log(`Current Total: ${total}, Current Product: ${product.name} , Current Price: ${product.price}`)
+
+
+//     if(product.inStock ){
+//         return total += product.price;
+//     }
+//     return total;
+// }, 0);
+
+// console.log(`\\nFinal Stock Price Value: $${totalStockValue}`);
+
+
+// const coffie = products.find((product) => product.name === "Coffee Maker");
+// console.log(coffie);
+
+
+// const mySet = new Set();
+
+// const numberArrays = [1,1, 23, 3, 3, 2, 2, 5, 5,6];
+
+// const setArray = new Set(numberArrays);
+// console.log(setArray)
+
+// mySet.add("Atul").add("Ankit")
+// mySet.add("Ankit")
+// mySet.delete("Ankit")
+// mySet.clear();
+// console.log(mySet.has("Ankit"))
+
+// console.log(mySet)
+
+
+// const visitedUsers = new Set();
+
+// function userVisits(userId){
+
+//     if(!visitedUsers.has(userId)){
+//         console.log(`WELCOME USER ${userId}`)
+//         visitedUsers.add(userId)
+//     }
+//     else{
+//         console.log(`WELCOME BACK USER ${userId}`)
+//     }
+// }
+
+// userVisits(101);
+// userVisits(120);
+// userVisits(101)
+
+// Imagine tracking unique visitors to a page
+// const visitedUsers = new Set();
+
+// function userVisits(userId) {
+//   if (!visitedUsers.has(userId)) {
+//     console.log(`Welcome, new visitor #${userId}!`);
+//     visitedUsers.add(userId);
+//   } else {
+//     console.log(`Welcome back, visitor #${userId}!`);
+//   }
+// }
+
+// userVisits(101); // Welcome, new visitor
+// userVisits(102); // Welcome, new visitor 
+// userVisits(101); // Welcome back, visitor
+
+
+// const map = new Map();
+
+// const userMap = new Map([
+//     ["name", "alice"],
+//     ["age", 21]
+// ])
+// console.log(userMap)
+
+// userMap.set("value", 3)
+// console.log(userMap.get("name"))
+
+// console.log(userMap)
+
+
