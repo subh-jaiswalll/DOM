@@ -505,29 +505,106 @@
 // console.log(user.address.city); // Output: "Indore" (because the address object is shared between user and shallowCopy)
 
 
-const user = {
-    name: "Atul",
-    age: 23,
-    address: {
-        street: "123 Main St",
-        city: "Jabalpur",
-        country: "India"
-    }
-};
+// const user = {
+//     name: "Atul",
+//     age: 23,
+//     address: {
+//         street: "123 Main St",
+//         city: "Jabalpur",
+//         country: "India"
+//     }
+// };
 
 // Deep copy of the user object using JSON.parse() and JSON.stringify() methods. It creates a new object and copies the properties of the original object to the new object, including nested objects. However, it does not work for functions, undefined, or symbols, and it can also cause issues with circular references.
 
-const DeepCopy = structuredClone(user); // This creates a deep copy of the user object using the structuredClone() method, which is a more modern and efficient way to create deep copies of objects in JavaScript.
-DeepCopy.name = "Rahul";
-DeepCopy.age = 24;
-DeepCopy.address.city = "Indore";
-console.log(DeepCopy); // Output: { name: "Rahul", age: 24, address: { street: "123 Main St", city: "Indore", country: "India" } }
-const deepCopy = JSON.parse(JSON.stringify(user));
-deepCopy.name = "Rahul";
-deepCopy.age = 24;
-deepCopy.address.city = "Indore";
-console.log(deepCopy); // Output: { name: "Rahul", age: 24, address: { street: "123 Main St", city: "Indore", country: "India" } }
-console.log(user.name); // Output: "Atul" (because deepCopy is a separate object)
-console.log(user.age);
-console.log(user.address.city); // Output: "Jabalpur" (because the address object is not shared between user and deepCopy)
+// const DeepCopy = structuredClone(user); // This creates a deep copy of the user object using the structuredClone() method, which is a more modern and efficient way to create deep copies of objects in JavaScript.
+// DeepCopy.name = "Rahul";
+// DeepCopy.age = 24;
+// DeepCopy.address.city = "Indore";
+// console.log(DeepCopy); // Output: { name: "Rahul", age: 24, address: { street: "123 Main St", city: "Indore", country: "India" } }
+// const deepCopy = JSON.parse(JSON.stringify(user));
+// deepCopy.name = "Rahul";
+// deepCopy.age = 24;
+// deepCopy.address.city = "Indore";
+// console.log(deepCopy); // Output: { name: "Rahul", age: 24, address: { street: "123 Main St", city: "Indore", country: "India" } }
+// console.log(user.name); // Output: "Atul" (because deepCopy is a separate object)
+// console.log(user.age);
+// console.log(user.address.city); // Output: "Jabalpur" (because the address object is not shared between user and deepCopy)
 
+
+
+// function greet(name){
+//     const sms = (`Name: ${name}`);
+//     console.log(sms)
+//     return sms;
+
+// }
+
+// const result = greet(1);
+// console.log(result);
+
+// function add(a, b){
+//     return a + b;
+// }
+// console.log(add(5, 4))
+
+
+// const result = function(a, b){
+//     return a +b;
+// }
+// console.log(result(3, 5))
+
+// const arrow = (a, b) =>{
+//     return a + b;
+// }
+
+// console.log(arrow(5, 5))
+
+// const sq = (x) => x * x;
+// console.log(sq(4))
+
+
+// function greet(name = "Guest"){
+
+//     return `Hello ${name}`
+// }
+// console.log(greet("Atul"))
+
+
+// function add(...numbers){
+//     let total = 0;
+
+//     for(let num of numbers){
+//         total += num;
+//     }
+//     return total;
+// }
+
+// console.log(add(4,5))
+// console.log(add(4, 5, 6, 6))
+
+
+// var globalVar = "I am Global Variable";
+
+// function myFunction(){
+//     var localVar = "I am Local Variable";
+//     console.log(globalVar);
+//     console.log(localVar);
+// }
+// myFunction();
+// console.log(localVar)
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// console.log(...numbers);
+// console.log(numbers)
+
+// const moreNumber = [6, 7, 8];
+
+// console.log(...numbers, ...moreNumber);
+
+// function add(a, b, c){
+//     return a + b + c;
+// }
+
+// console.log(add(...numbers))
