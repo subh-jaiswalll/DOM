@@ -608,3 +608,44 @@
 // }
 
 // console.log(add(...numbers))
+
+
+// function pickUpPizza(){
+//     console.log("Pizza is ready! Driving to store pick up ready")
+// }
+
+// function orderPizza(callback){
+//     console.log("Placing the pizza order...");
+//     console.log("Pizza is cooked")
+//     callback()
+// }
+
+// orderPizza(pickUpPizza);
+
+// console.log("I am at home")
+
+// This is your callback function. It's the "phone number" you'll leave behind.
+// It describes what to do once the pizza is ready.
+function pickUpPizza() {
+  console.log("Pizza is ready! Driving to the store to pick it up.");
+}
+
+
+function orderPizza(callback) {
+  
+  
+  console.log("Placing the pizza order...");
+
+    console.log("Pizza is cooked!");
+  
+    callback();
+
+  
+}
+
+// --- Let's run the program ---
+// We call orderPizza and give it our pickUpPizza function as the callback argument.
+orderPizza(pickUpPizza);
+
+// This line will run immediately, while the pizza is still "cooking".
+console.log("I'm not waiting at the store. I'm at home, coding.");
