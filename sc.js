@@ -444,9 +444,41 @@
 
 const newUser = {
     name: "Atul",
-    greeting: function() {
-        console.log("Hello, " + this.name + "!");
-    }
+    age: 23,
+    book: "JavaScript",
+    author: "John Doe",
+    page: 350,
+    // greeting: function() {
+    //     console.log("Hello, My Name is " + this.name + " and I am " + this.age + " years old!");
+    // },
+    // introduce: function() {
+    //     return this.name + " is " + this.age + " years old.";
+    // }
 };
 
-newUser.greeting(); // Output: "Hello, Atul!"
+// newUser.greeting(); // Output: "Hello, My Name is Atul and I am 23 years old!"
+// console.log(newUser.introduce()); // Output: "Atul is 23 years old."
+
+// for(let key in newUser){
+//     console.log(`${key}: ${newUser[key]}`);
+// }
+
+// console.log(Object.keys(newUser)); // Output: ["name", "age", "book", "author", "page"]
+// console.log(Object.values(newUser)); // Output: ["Atul", 23, "JavaScript", "John Doe", 350]
+// console.log(Object.entries(newUser)); // Output: [["name", "Atul"], ["age", 23], ["book", "JavaScript"], ["author", "John Doe"], ["page", 350]] 
+
+// for(let [key, value] of Object.entries(newUser)){
+//     console.log(`${key}: ${value}`);
+// }
+
+// const userCopy = newUser; // This creates a reference to the same object, not a copy.
+// console.log(userCopy); // Output: "Atul" (because userCopy and newUser reference the same object)
+// userCopy.name = "Rahul";
+// console.log(newUser.name); // Output: "Rahul" (because userCopy and newUser reference the same object)
+
+// const userClone = Object.assign({}, newUser); // This creates a shallow copy of the object.
+// userClone.name = "Rohit";
+// console.log(newUser.name); // Output: "Rahul" (because userClone is a separate object)
+
+// console.log(newUser); // it will show the original object with name "Rahul" because userClone is a separate object and does not affect newUser.
+
