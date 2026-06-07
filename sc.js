@@ -442,19 +442,19 @@
 // console.log(user["city"]);
 
 
-const newUser = {
-    name: "Atul",
-    age: 23,
-    book: "JavaScript",
-    author: "John Doe",
-    page: 350,
-    // greeting: function() {
-    //     console.log("Hello, My Name is " + this.name + " and I am " + this.age + " years old!");
-    // },
-    // introduce: function() {
-    //     return this.name + " is " + this.age + " years old.";
-    // }
-};
+// const newUser = {
+//     name: "Atul",
+//     age: 23,
+//     book: "JavaScript",
+//     author: "John Doe",
+//     page: 350,
+//     // greeting: function() {
+//     //     console.log("Hello, My Name is " + this.name + " and I am " + this.age + " years old!");
+//     // },
+//     // introduce: function() {
+//     //     return this.name + " is " + this.age + " years old.";
+//     // }
+// };
 
 // newUser.greeting(); // Output: "Hello, My Name is Atul and I am 23 years old!"
 // console.log(newUser.introduce()); // Output: "Atul is 23 years old."
@@ -482,3 +482,24 @@ const newUser = {
 
 // console.log(newUser); // it will show the original object with name "Rahul" because userClone is a separate object and does not affect newUser.
 
+// const user = {
+//     name: "Atul",
+//     age: 23,
+//     address: {
+//         street: "123 Main St",
+//         city: "Jabalpur",
+//         country: "India"
+//     }
+// }
+
+// //shallow copy of the user object using Object.assign() method. It creates a new object and copies the properties of the original object to the new object. However, it does not create a deep copy, meaning that if the original object contains nested objects, the nested objects will still be shared between the original and the copied object.
+// // const shallowCopy = Object.assign({}, user);
+// const shallowCopy = { ...user }; // This also creates a shallow copy of the user object using the spread operator.
+// shallowCopy.name = "Rahul";
+// shallowCopy.age = 24;
+// shallowCopy.address.city = "Indore";
+// console.log(shallowCopy); // Output: { name: "Rahul", age: 24, address: { street: "123 Main St", city: "Indore", country: "India" } }
+
+// console.log(user.name); // Output: "Atul" (because shallowCopy is a separate object)    
+// console.log(user.age);
+// console.log(user.address.city); // Output: "Indore" (because the address object is shared between user and shallowCopy)
