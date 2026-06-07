@@ -420,3 +420,33 @@
 // delete arr[5];
 // console.log(arr);
 
+
+// const user = {
+//     name: "Atul",
+//     age: 23,
+//     city: "Jabalpur",
+// }
+
+// user.name = "Rahul";
+// user.age = 24;
+// user["city"] = "Indore";
+
+// user.country = "India";
+
+// user.book = "JavaScript";
+
+// delete user.book;
+// console.log(user);
+// console.log(user.name);
+// console.log(user.age);
+// console.log(user["city"]);
+
+
+const newUser = {
+    name: "Atul",
+    greeting: function() {
+        console.log("Hello, " + this.name + "!");
+    }
+};
+
+newUser.greeting(); // Output: "Hello, Atul!"
