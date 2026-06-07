@@ -503,3 +503,31 @@
 // console.log(user.name); // Output: "Atul" (because shallowCopy is a separate object)    
 // console.log(user.age);
 // console.log(user.address.city); // Output: "Indore" (because the address object is shared between user and shallowCopy)
+
+
+const user = {
+    name: "Atul",
+    age: 23,
+    address: {
+        street: "123 Main St",
+        city: "Jabalpur",
+        country: "India"
+    }
+};
+
+// Deep copy of the user object using JSON.parse() and JSON.stringify() methods. It creates a new object and copies the properties of the original object to the new object, including nested objects. However, it does not work for functions, undefined, or symbols, and it can also cause issues with circular references.
+
+const DeepCopy = structuredClone(user); // This creates a deep copy of the user object using the structuredClone() method, which is a more modern and efficient way to create deep copies of objects in JavaScript.
+DeepCopy.name = "Rahul";
+DeepCopy.age = 24;
+DeepCopy.address.city = "Indore";
+console.log(DeepCopy); // Output: { name: "Rahul", age: 24, address: { street: "123 Main St", city: "Indore", country: "India" } }
+const deepCopy = JSON.parse(JSON.stringify(user));
+deepCopy.name = "Rahul";
+deepCopy.age = 24;
+deepCopy.address.city = "Indore";
+console.log(deepCopy); // Output: { name: "Rahul", age: 24, address: { street: "123 Main St", city: "Indore", country: "India" } }
+console.log(user.name); // Output: "Atul" (because deepCopy is a separate object)
+console.log(user.age);
+console.log(user.address.city); // Output: "Jabalpur" (because the address object is not shared between user and deepCopy)
+
