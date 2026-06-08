@@ -345,23 +345,85 @@
 // console.log(square(4));
 // console.log(square(5))
 
-function factorial(n){
+// function factorial(n){
 
-    if(n == 0 || n == 1){
-        return 1;
-    }
+//     if(n == 0 || n == 1){
+//         return 1;
+//     }
 
-    return n * factorial(n -1);
-}
+//     return n * factorial(n -1);
+// }
 
-console.log(factorial(5))
+// console.log(factorial(5))
 
-function greet(name){
-    this.name=  name;
-}
+// function greet(name){
+//     this.name=  name;
+// }
 
-const s1 = new greet("Atul");
-console.log(s1.name)
+// const s1 = new greet("Atul");
+// console.log(s1.name)
 
-let str = "Atul";
-console.log(str.charAt(3));
+// let str = "Atul";
+// console.log(str.charAt(3));
+
+// const promise = new Promise((resolve, reject) => {
+//     let result = Math.random() > 0.5;
+
+//     if(result){
+//         resolve("Data Fetched Successfully")
+//     }
+//     else{
+//         reject("Data Unable to Fetch")
+//     }
+    
+// });
+
+// promise
+//     .then((data) => {
+//         console.log(data);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+
+// async function greet(){
+//     return "Hello";
+
+// }
+
+// greet()
+// .then((data) =>{
+//     console.log(data);
+// })
+
+
+// async function test() {
+
+//     const result = await Promise.resolve("Success")
+//     return result;
+// }
+
+// test()
+// .then((data) =>{
+//     console.log(data)
+// })
+
+
+// function fetchData() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Data Received");
+//         }, 2000);
+//     });
+// }
+
+// async function getData() {
+//     console.log("Fetching...");
+
+//     const result = await fetchData();
+
+//     console.log(result);
+// }
+
+// getData();
