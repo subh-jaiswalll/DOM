@@ -3,6 +3,7 @@
 // mainContainer.style.padding = '20px'
 // mainContainer.style.margin = '20px';
 
+
 // const itemList = document.getElementById('item-list');
 // console.log(itemList);
 
@@ -67,8 +68,8 @@
 // desc.textContent = "Hello World"
 
 // Step 1: Select the Target Element
-const myButton = document.getElementById('action-button');
-const statusText = document.getElementById('status-text');
+// const myButton = document.getElementById('action-button');
+// const statusText = document.getElementById('status-text');
 
 // // Step 2: Define the Handler Function (the "action plan")
 // // This function will be executed when the event occurs.
@@ -83,93 +84,284 @@ const statusText = document.getElementById('status-text');
 // // When you hear one, execute the `onButtonClick` function."
 // myButton.addEventListener('click', onButtonClick);
 
-myButton.addEventListener('mouseover', () =>{
-    console.log("Button was clicked");
-    statusText.textContent = "Action Performed";
-    statusText.style.color = 'green'
-})
+// myButton.addEventListener('mouseover', () =>{
+//     console.log("Button was clicked");
+//     statusText.textContent = "Action Performed";
+//     statusText.style.color = 'green'
+// })
 
-// const intervalId = setInterval(() => {
-//     console.log("Hello");
-// }, 1000);
+// // const intervalId = setInterval(() => {
+// //     console.log("Hello");
+// // }, 1000);
 
-// setTimeout(() => {
-//     clearInterval(intervalId);
-//     console.log("Interval stopped");
-// }, 5000);
+// // setTimeout(() => {
+// //     clearInterval(intervalId);
+// //     console.log("Interval stopped");
+// // }, 5000);
 
-// const time = setTimeout(() =>{
-//     console.log("Hello")
-// }, 1000)
-// const set = setInterval(() =>{
-//     console.log("interval")
-// }, 1000)
+// // const time = setTimeout(() =>{
+// //     console.log("Hello")
+// // }, 1000)
+// // const set = setInterval(() =>{
+// //     console.log("interval")
+// // }, 1000)
 
-// fetch('https://jsonplaceholder.typicode.com/users')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//   })
-//   .catch(error => {
-//     console.log("Error:", error);
-//   });
+// // fetch('https://jsonplaceholder.typicode.com/users')
+// //   .then(response => response.json())
+// //   .then(data => {
+// //     console.log(data);
+// //   })
+// //   .catch(error => {
+// //     console.log("Error:", error);
+// //   });
 
-// The function says "Here's a Promise, use .then()"
-// const promise = fetch('/api/data');
+// // The function says "Here's a Promise, use .then()"
+// // const promise = fetch('/api/data');
 
-// promise.then(result => {
-//   console.log('Result!', result);  // Called later
+// // promise.then(result => {
+// //   console.log('Result!', result);  // Called later
+// // });
+
+// // JavaScript never waits, .then() callback called later
+
+// // Create a promise
+// const myPromise = new Promise((resolve, reject) => {
+//     // At this moment: Promise is PENDING
+
+//     setTimeout(() => {
+//         const success = true;
+
+//         if (success) {
+//             resolve("Success!"); // → Promise becomes FULFILLED
+//         } else {
+//             reject("Failed!");   // → Promise becomes REJECTED
+//         }
+//     }, 2000);
 // });
 
-// JavaScript never waits, .then() callback called later
+// myPromise
+//     .then((result) => {
+//         console.log(result);
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//     });
+// // myPromise is PENDING for 2 seconds
+// // Then becomes FULFILLED with value "Success!"
 
-// Create a promise
-const myPromise = new Promise((resolve, reject) => {
-    // At this moment: Promise is PENDING
+// function fetchData() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const success = Math.random() > 0.5;
 
-    setTimeout(() => {
-        const success = true;
+//             if (success) {
+//                 resolve({ data: "Some data" });
+//             } else {
+//                 reject("Network error");
+//             }
+//         }, 1000);
+//     });
+// }
 
-        if (success) {
-            resolve("Success!"); // → Promise becomes FULFILLED
-        } else {
-            reject("Failed!");   // → Promise becomes REJECTED
-        }
-    }, 2000);
-});
+// // Consuming the promise:
+// fetchData()
+//     .then((result) => {
+//         console.log("Success:", result);
+//     })
+//     .catch((error) => {
+//         console.error("Error:", error);
+//     })
+//     .finally(() => {
+//         console.log("Request completed");
+//     });
 
-myPromise
-    .then((result) => {
-        console.log(result);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-// myPromise is PENDING for 2 seconds
-// Then becomes FULFILLED with value "Success!"
 
-function fetchData() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const success = Math.random() > 0.5;
+// (function(){
+//     console.log("Atul")
+// }())
 
-            if (success) {
-                resolve({ data: "Some data" });
-            } else {
-                reject("Network error");
-            }
-        }, 1000);
-    });
+// function greet(name){
+//     console.log(`Hello ${name}`)
+// }
+
+// function processUser(callback){
+//     (callback("Atul"))
+// }
+
+// processUser(greet);
+
+// function add(num){
+
+//     return function(x){
+//         return num * x;
+//     }
+// }
+
+// const result = add(5);
+// console.log(result(2))
+
+// const  obj = {
+//     name: "Atul",
+//     greet: () => {
+//         console.log(this.name)
+//     }
+// }
+
+// obj.greet()
+
+// function greet(city, country){
+//     console.log(`Hello, I am ${this.name},from ${city}, ${country}`)
+// }
+
+// const person ={
+//     name : "Atul"
+// }
+
+// const boundFunction = greet.bind(person, ["Jabalpur", "INDIA"])
+
+// boundFunction()
+
+// const   person1 = {
+//     name: "Atul",
+//     greet() {
+//         console.log(`Hello ${this.name}`)
+//     }
+    
+
+
+// }
+
+// const person2 ={
+//     name: "Rahul"
+// }
+
+// person1.greet.call(person2)
+
+// function add(a) {
+//     return function (b) {
+//         return function (c) {
+//             return a + b + c;
+//         };
+//     };
+// }
+
+// console.log(add(10)(20)(30));
+
+// function multiply(a){
+//     return function(b){
+//         return a * b;
+//     }
+// }
+
+// const multplyresult = multiply(6);
+
+// console.log(multplyresult(3)
+// )
+
+// const name = "Atul";
+
+// function show() {
+//     console.log(name);
+// }
+
+// show();
+// console.log(name);
+
+// let globalVar = "Global";
+
+// function outer(){
+//     let outer = "Outer";
+
+//     function inner(){
+//         let inner = "Inner"
+
+//         console.log(globalVar);
+//         console.log(outer);
+//         console.log(inner)
+//     }
+//     inner()
+// }
+
+// // outer()
+
+
+// let name = "Atul";
+
+
+
+// function outer(){
+
+//     let massage = "Hello";
+
+//     function inner(){
+//         console.log(massage, name)
+//     }
+
+//     return inner;
+// }
+
+// const fn = outer();
+// fn()
+
+// const person = {
+//     name : "Atul"
+// }
+// console.log(person.toString())
+
+
+// function greet(name){
+//     console.log(`Hello ${name}`)
+// }
+
+// function user(callback){
+//     callback("Atul")
+// }
+
+// user(greet)
+
+// function memorizedSquare(){
+
+//     const cache = {};
+
+//     return function(num){
+
+//         if(cache[num] !== undefined){
+//             console.log("From cache")
+//             return cache[num];
+//         }
+
+//         console.log(" -- Calculating -- ")
+
+//         cache[num] = num * num;
+
+//         return cache[num]
+//     }
+
+// }
+
+// const square = memorizedSquare();
+
+// console.log(square(5));
+// console.log(square(4));
+// console.log(square(5))
+
+function factorial(n){
+
+    if(n == 0 || n == 1){
+        return 1;
+    }
+
+    return n * factorial(n -1);
 }
 
-// Consuming the promise:
-fetchData()
-    .then((result) => {
-        console.log("Success:", result);
-    })
-    .catch((error) => {
-        console.error("Error:", error);
-    })
-    .finally(() => {
-        console.log("Request completed");
-    });
+console.log(factorial(5))
+
+function greet(name){
+    this.name=  name;
+}
+
+const s1 = new greet("Atul");
+console.log(s1.name)
+
+let str = "Atul";
+console.log(str.charAt(3));
