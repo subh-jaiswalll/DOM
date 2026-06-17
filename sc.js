@@ -761,3 +761,12 @@
 // console.log(userMap)
 
 
+
+
+// how many types of function in javaScript
+
+
+function greet(){
+    return "Hello";
+}
+console.log(greet())

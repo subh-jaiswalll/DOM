@@ -426,4 +426,211 @@
 //     console.log(result);
 // }
 
-// getData();
+// // getData();
+
+
+// const limiter = new ConcurrencyLimiter(2);
+
+// function createTask(id) {
+//     return () =>
+//         new Promise(resolve => {
+//             console.log(`Start ${id}`);
+
+//             setTimeout(() => {
+//                 console.log(`End ${id}`);
+//                 resolve(id);
+//             }, 2000);
+//         });
+// }
+
+// for (let i = 1; i <= 5; i++) {
+//     limiter.run(createTask(i));
+// }
+
+
+const per1 = {
+    name: "Atul",
+    age : 21,
+    address :{
+        city: "Jabalpur",
+        state: "Mp"
+
+    }
+}
+
+// const per2 = {...per1}
+
+// per1.name = "Raju";
+// console.log(per1);
+
+// console.log(per2);
+
+// per2.name = "Rahul";
+// console.log(per1);
+// console.log(per2)
+
+// per2.address.city = "Rewa";
+
+// console.log(per1);
+// console.log(per2)
+
+// const deepCopy = JSON.parse(JSON.stringify(per1));
+
+// deepCopy.name = "Raju";
+// deepCopy.address.city = "Rewa";
+
+// console.log(deepCopy);
+// console.log(per1);
+
+// per1.name = "Rahul";
+// console.log(per1);
+// console.log(deepCopy)
+
+
+// function greet(name){
+//     return `Hello ${name}, ${name} + Hello`;
+// }
+// console.log(greet("Atul"))
+
+// const greet = function(name = "Raju"){
+//     return `Hello ${name}`
+// }
+
+// console.log(greet("Atul"))
+// console.log(greet())
+
+// const greet = (name = "Rahul") => {
+//     return `Hello ${name}`
+// }
+// console.log(greet("Atul"))
+// console.log(greet())
+
+// setTimeout( function(name = "Rahul")  {
+//     console.log( `Hello ${name}`)
+//     console.log(`Hello`)
+// }, 200)
+
+// // console.log()
+
+// (function(){
+//     console.log("Atul")
+// })()
+// (function() {
+//   console.log("Runs immediately");
+// })();
+
+// function Person(name){
+//     this.name = name;
+// }
+// console.log(Person())
+
+// function multiply(x){
+//     return function (y){
+//         return x * y;
+//     }
+// }
+
+// console.log(multiply(2)(9))
+
+// const person = {
+//     name : "Atul",
+//     age : 21
+// }
+// console.log(person.name)
+
+// const person = new Object();
+// person.name = "atul";
+// person.age = 22;
+// person.address = "REWA";
+// console.log(person)
+
+// function person(name, age){
+//     this.name = name;
+//     this.age =  age;
+// }
+
+// const p1 = new person("Atul", 22);
+// console.log(p1.age)
+
+// const arr = [1, 2, 3, 4, 5];
+
+// for(let num of arr){
+//     console.log(num)
+// }
+
+// const person = {
+//     name : "Atul",
+//     age : 22,
+//     address : "REWA",
+//     course : "B.Tech"
+// }
+
+// for(let num in person){
+//     console.log(num, person[num])
+// }
+
+// alert("WELCOME BACK TO JAVASCRIPT")
+// let name = prompt("PLEASE ENTER YOUR NAME");
+// console.log(name)
+
+// let result = confirm("Are you sure?")
+// console.log(result)
+
+// let num1 = Number(prompt("Enter first number:"));
+// let num2 = Number(prompt("Enter second number:"));
+
+// let sum = num1 + num2;
+
+// alert("Sum = " + sum);
+
+
+// function greet(name){
+//     console.log(`Hello ${name}`)
+// }
+
+// function user(callback){
+//     let name = "Atul";
+//     callback(name)
+// }
+// user(greet);
+
+// function greet(callback){
+//     console.log("Hi")
+//     callback();
+// }
+
+// function by(){
+//     console.log("Byy")
+// }
+
+// greet(by) 
+
+
+function step1(callback) {
+    setTimeout(() => {
+        console.log("Step 1 Completed");
+        callback();
+    }, 1000);
+}
+
+function step2(callback) {
+    setTimeout(() => {
+        console.log("Step 2 Completed");
+        callback();
+    }, 1000);
+}
+
+function step3(callback) {
+    setTimeout(() => {
+        console.log("Step 3 Completed");
+        callback();
+    }, 1000);
+}
+
+step1(() => {
+    step2(() => {
+        step3(() => {
+            console.log("All Steps Completed");
+        });
+    });
+});
