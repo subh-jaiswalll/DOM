@@ -137,6 +137,15 @@ const form = document.querySelector('form');
 
 const fruits = document.querySelector('.fruits');
 
+ const addBtn = form.querySelector('button');
+
+const descInput = document.createElement('input');
+
+descInput.type = 'text';
+descInput.placeholder = 'Enter fruit description';
+
+form.insertBefore(descInput, addBtn);
+
 
 const existingFruits = document.querySelectorAll('.fruit');
 
@@ -164,6 +173,18 @@ form.addEventListener('submit', function (event) {
     newLi.appendChild(newLiText);
     newLi.className = 'fruit';
 
+    // Description
+    const p = document.createElement('p');
+    const italic = document.createElement('i');
+
+    italic.textContent = descInput.value;
+
+    p.appendChild(italic);
+    newLi.appendChild(p);
+    descInput.value = '';
+
+
+
     const editBtn = document.createElement('button');
 
     const editBtnText = document.createTextNode('Edit');
@@ -187,6 +208,9 @@ form.addEventListener('submit', function (event) {
     fruits.appendChild(newLi);
 
     fruitsToAdd.value = '';
+
+
+
 });
 
 fruits.addEventListener('click', function (event) {
@@ -218,22 +242,26 @@ fruits.addEventListener('click', function (event) {
 
 const filter = document.getElementById('filter');
 
-filter.addEventListener('keyup', function(event){
+filter.addEventListener('keyup', function (event) {
 
     const textEntered = event.target.value.toLowerCase();
 
-    const fruitItems = document.getElementsByClassName('fruit');
+    const fruitItmes = document.getElementsByClassName('fruit');
 
-    for(let i = 0 ; i < fruitItems.length; i++){
+    for (let i = 0; i < fruitItmes.length; i++){
+        const currentFruitText = fruitItmes[i].firstChild.textContent.toLowerCase();
 
-        const currentFruitText= fruitItems[i].firstChild.textContent.toLowerCase();
+        const descriptionTag = fruitItmes[i].querySelector('p');
 
-        if(currentFruitText.indexOf(textEntered) === -1){
-            fruitItems[i].style.display = 'none';
+        const currentFruitDescription = descriptionTag ? descriptionTag.textContent.toLowerCase() : '';        
+
+        if(currentFruitText.indexOf(textEntered) === -1 && currentFruitDescription.indexOf(textEntered) === -1) {
+            fruitItmes[i].style.display = 'none';
         }
-        else{
-            fruitItems[i].style.display =  'flex';
+        else {
+            fruitItmes[i].style.display = 'flex';
         }
-    
     }
 })
+
+
