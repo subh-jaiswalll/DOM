@@ -1,9 +1,17 @@
 
 
-
 const form = document.querySelector('form');
 
 const fruits = document.querySelector('.fruits');
+
+ const addBtn = form.querySelector('button');
+
+const descInput = document.createElement('input');
+
+descInput.type = 'text';
+descInput.placeholder = 'Enter fruit description';
+
+form.insertBefore(descInput, addBtn);
 
 
 const existingFruits = document.querySelectorAll('.fruit');
@@ -18,56 +26,74 @@ for (let i = 0; i < existingFruits.length; i++){
 
     existingFruits[i].appendChild(editBtn);
 }
-form.addEventListener('submit', function(event){
+
+form.addEventListener('submit', function (event) {
     event.preventDefault();
 
 
-    const fruitToAdd = document.getElementById('fruit-to-add');
+    const fruitsToAdd = document.getElementById('fruit-to-add');
 
     const newLi = document.createElement('li');
-    newLi.className = 'fruit'
 
-    const newLiText = document.createTextNode(fruitToAdd.value);
+    const newLiText = document.createTextNode(fruitsToAdd.value);
 
     newLi.appendChild(newLiText);
+    newLi.className = 'fruit';
+
+    // Description
+    const p = document.createElement('p');
+    const italic = document.createElement('i');
+
+    italic.textContent = descInput.value;
+
+    p.appendChild(italic);
+    newLi.appendChild(p);
+    descInput.value = '';
 
 
-    const editButton = document.createElement('button');
-    const editButtonText = document.createTextNode('Edit');
 
-    editButton.className = "edit-btn";
+    const editBtn = document.createElement('button');
 
-    editButton.appendChild(editButtonText);
-    newLi.appendChild(editButton);
+    const editBtnText = document.createTextNode('Edit');
 
-    const deleteButton = document.createElement('button');
-    const deleteButtonText = document.createTextNode('X');
+    editBtn.appendChild(editBtnText);
 
-    deleteButton.className = 'delete-btn';
+    editBtn.className = 'edit-btn';
 
-    deleteButton.appendChild(deleteButtonText);
+    newLi.appendChild(editBtn)
 
-    newLi.appendChild(deleteButton);
+
+    const deleteBtn = document.createElement('button');
+
+    const deleteBtnText = document.createTextNode('x');
+    deleteBtn.appendChild(deleteBtnText);
+
+    deleteBtn.className = 'delete-btn';
+
+    newLi.appendChild(deleteBtn);
 
     fruits.appendChild(newLi);
 
-    console.log(newLi);
-})
+    fruitsToAdd.value = '';
 
 
-fruits.addEventListener('click', function(event){
 
-    if(event.target.classList.contains('delete-btn')){
+});
 
-        const deleteItem = event.target.parentElement;
+fruits.addEventListener('click', function (event) {
 
-        fruits.removeChild(deleteItem);
+    if (event.target.classList.contains('delete-btn')) {
+        const fruitToDelete = event.target.parentElement;
+        fruits.removeChild(fruitToDelete);
     }
 })
 
-fruits.addEventListener('click', function(event){
 
-    if(event.target.classList.contains('edit-btn')){
+
+fruits.addEventListener('click', function (event) {
+
+
+    if (event.target.classList.contains('edit-btn')) {
 
         const fruitItem = event.target.parentElement;
 
@@ -78,3 +104,31 @@ fruits.addEventListener('click', function(event){
         fruits.removeChild(fruitItem);
     }
 })
+
+
+
+const filter = document.getElementById('filter');
+
+filter.addEventListener('keyup', function (event) {
+
+    const textEntered = event.target.value.toLowerCase();
+
+    const fruitItmes = document.getElementsByClassName('fruit');
+
+    for (let i = 0; i < fruitItmes.length; i++){
+        const currentFruitText = fruitItmes[i].firstChild.textContent.toLowerCase();
+
+        const descriptionTag = fruitItmes[i].querySelector('p');
+
+        const currentFruitDescription = descriptionTag ? descriptionTag.textContent.toLowerCase() : '';        
+
+        if(currentFruitText.indexOf(textEntered) === -1 && currentFruitDescription.indexOf(textEntered) === -1) {
+            fruitItmes[i].style.display = 'none';
+        }
+        else {
+            fruitItmes[i].style.display = 'flex';
+        }
+    }
+})
+
+
