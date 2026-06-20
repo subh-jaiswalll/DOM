@@ -137,7 +137,7 @@ const form = document.querySelector('form');
 
 const fruits = document.querySelector('.fruits');
 
- const addBtn = form.querySelector('button');
+const addBtn = form.querySelector('button');
 
 const descInput = document.createElement('input');
 
